@@ -72,7 +72,7 @@ namespace МагазинМузыкальныхИнструментов
             if (table.Rows.Count > 0)
                 MessageBox.Show("Yes");
             else
-                MessageBox.Show("No");
+                MessageBox.Show("No, sorry!");
         }
 
     }

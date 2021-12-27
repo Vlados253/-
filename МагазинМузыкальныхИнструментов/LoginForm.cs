@@ -23,7 +23,7 @@ namespace МагазинМузыкальныхИнструментов
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void closeButton_MouseEnter(object sender, EventArgs e)
@@ -75,5 +75,11 @@ namespace МагазинМузыкальныхИнструментов
                 MessageBox.Show("No, sorry!");
         }
 
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegisterForm registerform = new RegisterForm();
+            registerform.Show();
+        }
     }
 }

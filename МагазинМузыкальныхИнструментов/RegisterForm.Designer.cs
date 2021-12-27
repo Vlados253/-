@@ -30,6 +30,7 @@ namespace МагазинМузыкальныхИнструментов
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.ArrowBackLabel = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Label();
             this.SmallMainPanel = new System.Windows.Forms.Panel();
             this.userCodeField = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@ namespace МагазинМузыкальныхИнструментов
             this.userNameField = new System.Windows.Forms.TextBox();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             this.SmallMainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +48,7 @@ namespace МагазинМузыкальныхИнструментов
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
-            this.MainPanel.Controls.Add(this.label2);
+            this.MainPanel.Controls.Add(this.ArrowBackLabel);
             this.MainPanel.Controls.Add(this.closeButton);
             this.MainPanel.Controls.Add(this.SmallMainPanel);
             this.MainPanel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -58,6 +58,21 @@ namespace МагазинМузыкальныхИнструментов
             this.MainPanel.TabIndex = 2;
             this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseDown);
             this.MainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseMove);
+            // 
+            // ArrowBackLabel
+            // 
+            this.ArrowBackLabel.AutoSize = true;
+            this.ArrowBackLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ArrowBackLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ArrowBackLabel.ForeColor = System.Drawing.Color.White;
+            this.ArrowBackLabel.Location = new System.Drawing.Point(5, 10);
+            this.ArrowBackLabel.Name = "ArrowBackLabel";
+            this.ArrowBackLabel.Size = new System.Drawing.Size(39, 26);
+            this.ArrowBackLabel.TabIndex = 2;
+            this.ArrowBackLabel.Text = "<--";
+            this.ArrowBackLabel.Click += new System.EventHandler(this.ArrowBackLabel_Click);
+            this.ArrowBackLabel.MouseEnter += new System.EventHandler(this.ArrowBackLabel_MouseEnter);
+            this.ArrowBackLabel.MouseLeave += new System.EventHandler(this.ArrowBackLabel_MouseLeave);
             // 
             // closeButton
             // 
@@ -99,6 +114,8 @@ namespace МагазинМузыкальныхИнструментов
             this.userCodeField.Size = new System.Drawing.Size(196, 30);
             this.userCodeField.TabIndex = 7;
             this.userCodeField.UseSystemPasswordChar = true;
+            this.userCodeField.Enter += new System.EventHandler(this.userCodeField_Enter);
+            this.userCodeField.Leave += new System.EventHandler(this.userCodeField_Leave);
             // 
             // userEmailField
             // 
@@ -109,15 +126,19 @@ namespace МагазинМузыкальныхИнструментов
             this.userEmailField.Size = new System.Drawing.Size(196, 30);
             this.userEmailField.TabIndex = 6;
             this.userEmailField.UseSystemPasswordChar = true;
+            this.userEmailField.Enter += new System.EventHandler(this.userEmailField_Enter);
+            this.userEmailField.Leave += new System.EventHandler(this.userEmailField_Leave);
             // 
             // passField
             // 
             this.passField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passField.Location = new System.Drawing.Point(251, 164);
+            this.passField.Location = new System.Drawing.Point(251, 160);
             this.passField.Name = "passField";
             this.passField.Size = new System.Drawing.Size(196, 26);
             this.passField.TabIndex = 1;
             this.passField.UseSystemPasswordChar = true;
+            this.passField.Enter += new System.EventHandler(this.passField_Enter);
+            this.passField.Leave += new System.EventHandler(this.passField_Leave);
             // 
             // userSurnameField
             // 
@@ -140,6 +161,8 @@ namespace МагазинМузыкальныхИнструментов
             this.loginField.Size = new System.Drawing.Size(196, 30);
             this.loginField.TabIndex = 2;
             this.loginField.UseSystemPasswordChar = true;
+            this.loginField.Enter += new System.EventHandler(this.loginField_Enter);
+            this.loginField.Leave += new System.EventHandler(this.loginField_Leave);
             // 
             // userNameField
             // 
@@ -183,17 +206,6 @@ namespace МагазинМузыкальныхИнструментов
             this.label1.TabIndex = 0;
             this.label1.Text = "Регистрация";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(5, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 26);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "<--";
-            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +214,7 @@ namespace МагазинМузыкальныхИнструментов
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
@@ -224,6 +237,6 @@ namespace МагазинМузыкальныхИнструментов
         private System.Windows.Forms.TextBox userEmailField;
         private System.Windows.Forms.TextBox userSurnameField;
         private System.Windows.Forms.TextBox userNameField;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label ArrowBackLabel;
     }
 }

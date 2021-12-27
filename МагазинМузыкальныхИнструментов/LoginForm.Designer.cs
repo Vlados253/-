@@ -32,11 +32,11 @@ namespace МагазинМузыкальныхИнструментов
             this.MainPanel = new System.Windows.Forms.Panel();
             this.closeButton = new System.Windows.Forms.Label();
             this.SmallMainPanel = new System.Windows.Forms.Panel();
+            this.RegisterButton = new System.Windows.Forms.Button();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.loginField = new System.Windows.Forms.TextBox();
             this.passField = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SmallMainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +72,7 @@ namespace МагазинМузыкальныхИнструментов
             // SmallMainPanel
             // 
             this.SmallMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
-            this.SmallMainPanel.Controls.Add(this.button1);
+            this.SmallMainPanel.Controls.Add(this.RegisterButton);
             this.SmallMainPanel.Controls.Add(this.buttonLogin);
             this.SmallMainPanel.Controls.Add(this.loginField);
             this.SmallMainPanel.Controls.Add(this.passField);
@@ -81,6 +81,20 @@ namespace МагазинМузыкальныхИнструментов
             this.SmallMainPanel.Name = "SmallMainPanel";
             this.SmallMainPanel.Size = new System.Drawing.Size(330, 260);
             this.SmallMainPanel.TabIndex = 0;
+            // 
+            // RegisterButton
+            // 
+            this.RegisterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
+            this.RegisterButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegisterButton.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RegisterButton.Location = new System.Drawing.Point(49, 220);
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(237, 25);
+            this.RegisterButton.TabIndex = 4;
+            this.RegisterButton.Text = "Регистрация";
+            this.RegisterButton.UseVisualStyleBackColor = false;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // buttonLogin
             // 
@@ -130,18 +144,6 @@ namespace МагазинМузыкальныхИнструментов
             this.label1.TabIndex = 0;
             this.label1.Text = "Авторизация";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(49, 220);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(237, 25);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Регистрация";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,6 +152,7 @@ namespace МагазинМузыкальныхИнструментов
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
@@ -168,6 +171,6 @@ namespace МагазинМузыкальныхИнструментов
         private System.Windows.Forms.TextBox passField;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label closeButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button RegisterButton;
     }
 }

@@ -17,23 +17,26 @@ namespace МагазинМузыкальныхИнструментов
         {
             InitializeComponent();
 
+            this.passField.AutoSize = false;
+            this.passField.Size = new Size(this.passField.Size.Width, 30);
+
             userNameField.Text = "Введите имя";
             userNameField.ForeColor = Color.Gray;
             userSurnameField.Text = "Введите фамилию";
             userSurnameField.ForeColor = Color.Gray;
-            /*userEmailField.Text = "Введите e-mail";
+            userEmailField.Text = "Введите e-mail";
             userEmailField.ForeColor = Color.Gray;
             userCodeField.Text = "Код (необязательно)";
             userCodeField.ForeColor = Color.Gray;
             loginField.Text = "Введите логин";
             loginField.ForeColor = Color.Gray;
             passField.Text = "Введите пароль";
-            passField.ForeColor = Color.Gray;*/
+            passField.ForeColor = Color.Gray;
         }
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void closeButton_MouseEnter(object sender, EventArgs e)
@@ -99,11 +102,92 @@ namespace МагазинМузыкальныхИнструментов
             }
         }
 
+        private void userEmailField_Enter(object sender, EventArgs e)
+        {
+            if (userEmailField.Text == "Введите e-mail")
+            {
+                userEmailField.Text = "";
+                userEmailField.ForeColor = Color.Black;
+            }
+        }
+
+        private void userEmailField_Leave(object sender, EventArgs e)
+        {
+            if (userEmailField.Text == "")
+            {
+                userEmailField.Text = "Введите e-mail";
+                userEmailField.ForeColor = Color.Gray;
+            }
+        }
+
+        private void userCodeField_Enter(object sender, EventArgs e)
+        {
+            if (userCodeField.Text == "Код (необязательно)")
+            {
+                userCodeField.Text = "";
+                userCodeField.ForeColor = Color.Black;
+            }
+        }
+
+        private void userCodeField_Leave(object sender, EventArgs e)
+        {
+            if (userCodeField.Text == "")
+            {
+                userCodeField.Text = "Код (необязательно)";
+                userCodeField.ForeColor = Color.Gray;
+            }
+        }
+
+        private void loginField_Enter(object sender, EventArgs e)
+        {
+            if (loginField.Text == "Введите логин")
+            {
+                loginField.Text = "";
+                loginField.ForeColor = Color.Black;
+            }
+        }
+
+        private void loginField_Leave(object sender, EventArgs e)
+        {
+            if (loginField.Text == "")
+            {
+                loginField.Text = "Введите логин";
+                loginField.ForeColor = Color.Gray;
+            }
+        }
+
+        private void passField_Enter(object sender, EventArgs e)
+        {
+            if (passField.Text == "Введите пароль")
+            {
+                passField.Text = "";
+                passField.ForeColor = Color.Black;
+            }
+        }
+
+        private void passField_Leave(object sender, EventArgs e)
+        {
+            if (passField.Text == "")
+            {
+                passField.Text = "Введите пароль";
+                passField.ForeColor = Color.Gray;
+            }
+        }
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            DB db = new DB();
-            if (userCodeField.Text == "14318")
+
+            if (userNameField.Text == "Введите имя") 
             {
+                MessageBox.Show("Введите имя!");
+                return;
+            }
+
+            DB db = new DB();
+            if (userCodeField.Text == "a18a")
+            {
+                if (isUserExists())
+                    return;
+
                 MySqlCommand command = new MySqlCommand("INSERT INTO `employees` (`name`, `surname`, `login`, `pass`, `e-mail`, `post`) VALUES (@name, @surname, @login, @pass, @email, @post)", db.getConnetion());
 
                 command.Parameters.Add("@name", MySqlDbType.VarChar).Value = userNameField.Text;
@@ -111,7 +195,7 @@ namespace МагазинМузыкальныхИнструментов
                 command.Parameters.Add("@login", MySqlDbType.VarChar).Value = loginField.Text;
                 command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = passField.Text;
                 command.Parameters.Add("@email", MySqlDbType.VarChar).Value = userEmailField.Text;
-                command.Parameters.Add("@post", MySqlDbType.VarChar).Value = "Сотрудник";
+                command.Parameters.Add("@post", MySqlDbType.VarChar).Value = "Employee";
 
                 db.openConnection();
 
@@ -124,6 +208,9 @@ namespace МагазинМузыкальныхИнструментов
             }
             if (userCodeField.Text == "a143a")
             {
+                if (isUserExists())
+                    return;
+
                 MySqlCommand command = new MySqlCommand("INSERT INTO `employees` (`name`, `surname`, `login`, `pass`, `e-mail`, `post`) VALUES (@name, @surname, @login, @pass, @email, @post)", db.getConnetion());
 
                 command.Parameters.Add("@name", MySqlDbType.VarChar).Value = userNameField.Text;
@@ -131,7 +218,7 @@ namespace МагазинМузыкальныхИнструментов
                 command.Parameters.Add("@login", MySqlDbType.VarChar).Value = loginField.Text;
                 command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = passField.Text;
                 command.Parameters.Add("@email", MySqlDbType.VarChar).Value = userEmailField.Text;
-                command.Parameters.Add("@post", MySqlDbType.VarChar).Value = "Администратор";
+                command.Parameters.Add("@post", MySqlDbType.VarChar).Value = "Admin";
 
                 db.openConnection();
 
@@ -142,8 +229,11 @@ namespace МагазинМузыкальныхИнструментов
 
                 db.closeConnection();
             }
-            else
+            if (userCodeField.Text == "")
             {
+                if (isUserExists())
+                    return;
+
                 MySqlCommand command = new MySqlCommand("INSERT INTO `customers` (`name`, `surname`, `login`, `pass`, `e-mail`) VALUES (@name, @surname, @login, @pass, @email)", db.getConnetion());
 
                 command.Parameters.Add("@name", MySqlDbType.VarChar).Value = userNameField.Text;
@@ -161,6 +251,50 @@ namespace МагазинМузыкальныхИнструментов
 
                 db.closeConnection();
             }
+
+        }
+
+        public Boolean isUserExists() 
+        {
+            DB db = new DB();
+
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `employees`,`customers` WHERE employees.login = @uL OR customers.login  = @uL", db.getConnetion());
+            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginField.Text;
+           
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("Такой логин уже есть, введите другой!");
+                return true;
+            }
+
+            else 
+            {
+                return false;
+            }   
+        }
+
+        private void ArrowBackLabel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm loginform = new LoginForm();
+            loginform.Show();
+        }
+
+        private void ArrowBackLabel_MouseEnter(object sender, EventArgs e)
+        {
+            ArrowBackLabel.ForeColor = Color.Gray;
+        }
+
+        private void ArrowBackLabel_MouseLeave(object sender, EventArgs e)
+        {
+            ArrowBackLabel.ForeColor = Color.White;
         }
     }
 }

@@ -175,15 +175,42 @@ namespace МагазинМузыкальныхИнструментов
         }
         private void buttonRegister_Click(object sender, EventArgs e)
         {
+            string AdminCode = "a143a";
+            string EmployeeCode = "a18a";
 
             if (userNameField.Text == "Введите имя") 
             {
                 MessageBox.Show("Введите имя!");
                 return;
             }
+            if (userSurnameField.Text == "Введите фамилию")
+            {
+                MessageBox.Show("Введите фамилию!");
+                return;
+            }
+            if (userEmailField.Text == "Введите e-mail")
+            {
+                MessageBox.Show("Введите e-mail!");
+                return;
+            }
+            if (userCodeField.Text != AdminCode && userCodeField.Text != EmployeeCode && userCodeField.Text != "Код (необязательно)")
+            {
+                MessageBox.Show("Такого кода не существует! Введите существующий или оставьте строку пустой!");
+                return;
+            }
+            if (loginField.Text == "Введите логин")
+            {
+                MessageBox.Show("Введите логин!");
+                return;
+            }
+            if (passField.Text == "Введите пароль")
+            {
+                MessageBox.Show("Введите пароль!");
+                return;
+            }
 
             DB db = new DB();
-            if (userCodeField.Text == "a18a")
+            if (userCodeField.Text == EmployeeCode)
             {
                 if (isUserExists())
                     return;
@@ -206,7 +233,7 @@ namespace МагазинМузыкальныхИнструментов
 
                 db.closeConnection();
             }
-            if (userCodeField.Text == "a143a")
+            if (userCodeField.Text == AdminCode)
             {
                 if (isUserExists())
                     return;
@@ -229,7 +256,7 @@ namespace МагазинМузыкальныхИнструментов
 
                 db.closeConnection();
             }
-            if (userCodeField.Text == "")
+            if (userCodeField.Text == "Код (необязательно)")
             {
                 if (isUserExists())
                     return;

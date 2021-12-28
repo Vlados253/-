@@ -123,6 +123,8 @@ namespace МагазинМузыкальныхИнструментов
             this.loginField.Size = new System.Drawing.Size(237, 30);
             this.loginField.TabIndex = 2;
             this.loginField.UseSystemPasswordChar = true;
+            this.loginField.Enter += new System.EventHandler(this.loginField_Enter);
+            this.loginField.Leave += new System.EventHandler(this.loginField_Leave);
             // 
             // passField
             // 
@@ -132,6 +134,8 @@ namespace МагазинМузыкальныхИнструментов
             this.passField.Size = new System.Drawing.Size(237, 26);
             this.passField.TabIndex = 1;
             this.passField.UseSystemPasswordChar = true;
+            this.passField.Enter += new System.EventHandler(this.passField_Enter);
+            this.passField.Leave += new System.EventHandler(this.passField_Leave);
             // 
             // label1
             // 

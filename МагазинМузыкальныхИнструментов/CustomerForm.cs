@@ -17,6 +17,9 @@ namespace МагазинМузыкальныхИнструментов
             InitializeComponent();
         }
 
-        
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

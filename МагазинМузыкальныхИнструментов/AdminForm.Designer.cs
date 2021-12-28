@@ -30,6 +30,7 @@ namespace МагазинМузыкальныхИнструментов
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@ namespace МагазинМузыкальныхИнструментов
             this.button1 = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Label();
             this.SmallMainPanel = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,19 @@ namespace МагазинМузыкальныхИнструментов
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(784, 417);
             this.MainPanel.TabIndex = 4;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Location = new System.Drawing.Point(663, 270);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(95, 23);
+            this.button9.TabIndex = 12;
+            this.button9.Text = "Изменить";
+            this.button9.UseVisualStyleBackColor = false;
             // 
             // button8
             // 
@@ -192,6 +205,7 @@ namespace МагазинМузыкальныхИнструментов
             this.closeButton.Size = new System.Drawing.Size(23, 26);
             this.closeButton.TabIndex = 1;
             this.closeButton.Text = "x";
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // SmallMainPanel
             // 
@@ -201,19 +215,6 @@ namespace МагазинМузыкальныхИнструментов
             this.SmallMainPanel.Size = new System.Drawing.Size(498, 330);
             this.SmallMainPanel.TabIndex = 0;
             // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(663, 270);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(95, 23);
-            this.button9.TabIndex = 12;
-            this.button9.Text = "Изменить";
-            this.button9.UseVisualStyleBackColor = false;
-            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,6 +223,7 @@ namespace МагазинМузыкальныхИнструментов
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminForm";
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();

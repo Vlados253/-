@@ -30,24 +30,38 @@ namespace МагазинМузыкальныхИнструментов
         private void InitializeComponent()
         {
             this.SmallMainPanel = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.updateButton = new System.Windows.Forms.Button();
+            this.orderButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Label();
+            this.SmallMainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // SmallMainPanel
             // 
             this.SmallMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
+            this.SmallMainPanel.Controls.Add(this.dataGridView1);
             this.SmallMainPanel.Location = new System.Drawing.Point(26, 45);
             this.SmallMainPanel.Name = "SmallMainPanel";
-            this.SmallMainPanel.Size = new System.Drawing.Size(721, 330);
+            this.SmallMainPanel.Size = new System.Drawing.Size(721, 337);
             this.SmallMainPanel.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(721, 337);
+            this.dataGridView1.TabIndex = 0;
             // 
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
-            this.MainPanel.Controls.Add(this.button1);
+            this.MainPanel.Controls.Add(this.updateButton);
+            this.MainPanel.Controls.Add(this.orderButton);
             this.MainPanel.Controls.Add(this.closeButton);
             this.MainPanel.Controls.Add(this.SmallMainPanel);
             this.MainPanel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -56,18 +70,35 @@ namespace МагазинМузыкальныхИнструментов
             this.MainPanel.Size = new System.Drawing.Size(771, 405);
             this.MainPanel.TabIndex = 2;
             // 
-            // button1
+            // updateButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(77, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Сделать заказ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.updateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
+            this.updateButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateButton.FlatAppearance.BorderSize = 0;
+            this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateButton.ForeColor = System.Drawing.Color.White;
+            this.updateButton.Location = new System.Drawing.Point(137, 13);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(75, 23);
+            this.updateButton.TabIndex = 5;
+            this.updateButton.Text = "Обновить";
+            this.updateButton.UseVisualStyleBackColor = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
+            // orderButton
+            // 
+            this.orderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
+            this.orderButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.orderButton.FlatAppearance.BorderSize = 0;
+            this.orderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderButton.ForeColor = System.Drawing.Color.White;
+            this.orderButton.Location = new System.Drawing.Point(26, 13);
+            this.orderButton.Name = "orderButton";
+            this.orderButton.Size = new System.Drawing.Size(105, 23);
+            this.orderButton.TabIndex = 4;
+            this.orderButton.Text = "Оформить заказ";
+            this.orderButton.UseVisualStyleBackColor = false;
+            this.orderButton.Click += new System.EventHandler(this.orderButton_Click);
             // 
             // closeButton
             // 
@@ -81,6 +112,8 @@ namespace МагазинМузыкальныхИнструментов
             this.closeButton.TabIndex = 1;
             this.closeButton.Text = "x";
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
+            this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
             // 
             // CustomerForm
             // 
@@ -92,6 +125,9 @@ namespace МагазинМузыкальныхИнструментов
             this.Name = "CustomerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerForm";
+            this.Load += new System.EventHandler(this.CustomerForm_Load);
+            this.SmallMainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -103,6 +139,8 @@ namespace МагазинМузыкальныхИнструментов
         private System.Windows.Forms.Panel SmallMainPanel;
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Label closeButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button orderButton;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button updateButton;
     }
 }

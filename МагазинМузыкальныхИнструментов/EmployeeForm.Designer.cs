@@ -62,9 +62,9 @@ namespace МагазинМузыкальныхИнструментов
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(554, 247);
+            this.button5.Location = new System.Drawing.Point(463, 37);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(205, 23);
+            this.button5.Size = new System.Drawing.Size(137, 23);
             this.button5.TabIndex = 8;
             this.button5.Text = "Заказы";
             this.button5.UseVisualStyleBackColor = false;
@@ -75,9 +75,9 @@ namespace МагазинМузыкальныхИнструментов
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(554, 204);
+            this.button4.Location = new System.Drawing.Point(320, 37);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(205, 23);
+            this.button4.Size = new System.Drawing.Size(137, 23);
             this.button4.TabIndex = 7;
             this.button4.Text = "Продажи";
             this.button4.UseVisualStyleBackColor = false;
@@ -88,9 +88,9 @@ namespace МагазинМузыкальныхИнструментов
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(554, 157);
+            this.button3.Location = new System.Drawing.Point(177, 37);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(205, 23);
+            this.button3.Size = new System.Drawing.Size(137, 23);
             this.button3.TabIndex = 6;
             this.button3.Text = "Каталог";
             this.button3.UseVisualStyleBackColor = false;
@@ -101,9 +101,9 @@ namespace МагазинМузыкальныхИнструментов
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(554, 290);
+            this.button2.Location = new System.Drawing.Point(606, 37);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(205, 23);
+            this.button2.Size = new System.Drawing.Size(151, 23);
             this.button2.TabIndex = 5;
             this.button2.Text = "Сделать отчет";
             this.button2.UseVisualStyleBackColor = false;
@@ -114,9 +114,9 @@ namespace МагазинМузыкальныхИнструментов
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(554, 109);
+            this.button1.Location = new System.Drawing.Point(34, 37);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(205, 23);
+            this.button1.Size = new System.Drawing.Size(137, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "Поступления";
             this.button1.UseVisualStyleBackColor = false;
@@ -137,9 +137,9 @@ namespace МагазинМузыкальныхИнструментов
             // SmallMainPanel
             // 
             this.SmallMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
-            this.SmallMainPanel.Location = new System.Drawing.Point(34, 44);
+            this.SmallMainPanel.Location = new System.Drawing.Point(34, 66);
             this.SmallMainPanel.Name = "SmallMainPanel";
-            this.SmallMainPanel.Size = new System.Drawing.Size(498, 330);
+            this.SmallMainPanel.Size = new System.Drawing.Size(723, 308);
             this.SmallMainPanel.TabIndex = 0;
             // 
             // EmployeeForm

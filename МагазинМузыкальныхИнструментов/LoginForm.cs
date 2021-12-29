@@ -17,7 +17,7 @@ namespace МагазинМузыкальныхИнструментов
         {
             InitializeComponent();
 
-            this.passField.AutoSize = false;
+            this.passField.AutoSize = true;
             this.passField.Size = new Size(this.passField.Size.Width, 30);
 
             loginField.Text = "Введите логин";

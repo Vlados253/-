@@ -30,15 +30,16 @@ namespace МагазинМузыкальныхИнструментов
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.ArrowBackLabel = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Label();
             this.SmallMainPanel = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.userCodeField = new System.Windows.Forms.TextBox();
             this.userEmailField = new System.Windows.Forms.TextBox();
             this.loginField = new System.Windows.Forms.TextBox();
             this.userNameField = new System.Windows.Forms.TextBox();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.userCodeField = new System.Windows.Forms.TextBox();
             this.MainPanel.SuspendLayout();
             this.SmallMainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -46,25 +47,29 @@ namespace МагазинМузыкальныхИнструментов
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
-            this.MainPanel.Controls.Add(this.label2);
+            this.MainPanel.Controls.Add(this.ArrowBackLabel);
             this.MainPanel.Controls.Add(this.closeButton);
             this.MainPanel.Controls.Add(this.SmallMainPanel);
             this.MainPanel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(616, 375);
+            this.MainPanel.Size = new System.Drawing.Size(616, 431);
             this.MainPanel.TabIndex = 3;
             // 
-            // label2
+            // ArrowBackLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(5, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 26);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "<--";
+            this.ArrowBackLabel.AutoSize = true;
+            this.ArrowBackLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ArrowBackLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ArrowBackLabel.ForeColor = System.Drawing.Color.White;
+            this.ArrowBackLabel.Location = new System.Drawing.Point(3, 0);
+            this.ArrowBackLabel.Name = "ArrowBackLabel";
+            this.ArrowBackLabel.Size = new System.Drawing.Size(39, 26);
+            this.ArrowBackLabel.TabIndex = 2;
+            this.ArrowBackLabel.Text = "<--";
+            this.ArrowBackLabel.Click += new System.EventHandler(this.ArrowBackLabel_Click);
+            this.ArrowBackLabel.MouseEnter += new System.EventHandler(this.ArrowBackLabel_MouseEnter);
+            this.ArrowBackLabel.MouseLeave += new System.EventHandler(this.ArrowBackLabel_MouseLeave);
             // 
             // closeButton
             // 
@@ -72,15 +77,19 @@ namespace МагазинМузыкальныхИнструментов
             this.closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.Location = new System.Drawing.Point(590, 10);
+            this.closeButton.Location = new System.Drawing.Point(593, 0);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(23, 26);
             this.closeButton.TabIndex = 1;
             this.closeButton.Text = "x";
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
+            this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
             // 
             // SmallMainPanel
             // 
             this.SmallMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
+            this.SmallMainPanel.Controls.Add(this.textBox1);
             this.SmallMainPanel.Controls.Add(this.userCodeField);
             this.SmallMainPanel.Controls.Add(this.userEmailField);
             this.SmallMainPanel.Controls.Add(this.loginField);
@@ -89,8 +98,32 @@ namespace МагазинМузыкальныхИнструментов
             this.SmallMainPanel.Controls.Add(this.label1);
             this.SmallMainPanel.Location = new System.Drawing.Point(60, 38);
             this.SmallMainPanel.Name = "SmallMainPanel";
-            this.SmallMainPanel.Size = new System.Drawing.Size(487, 311);
+            this.SmallMainPanel.Size = new System.Drawing.Size(487, 360);
             this.SmallMainPanel.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.ForeColor = System.Drawing.Color.Gray;
+            this.textBox1.Location = new System.Drawing.Point(49, 255);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(395, 30);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.Text = "Адресс";
+            this.textBox1.UseSystemPasswordChar = true;
+            // 
+            // userCodeField
+            // 
+            this.userCodeField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userCodeField.ForeColor = System.Drawing.Color.Gray;
+            this.userCodeField.Location = new System.Drawing.Point(49, 205);
+            this.userCodeField.Multiline = true;
+            this.userCodeField.Name = "userCodeField";
+            this.userCodeField.Size = new System.Drawing.Size(395, 30);
+            this.userCodeField.TabIndex = 7;
+            this.userCodeField.Text = "Стоимость";
+            this.userCodeField.UseSystemPasswordChar = true;
             // 
             // userEmailField
             // 
@@ -108,7 +141,7 @@ namespace МагазинМузыкальныхИнструментов
             // 
             this.loginField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.loginField.ForeColor = System.Drawing.Color.Gray;
-            this.loginField.Location = new System.Drawing.Point(49, 160);
+            this.loginField.Location = new System.Drawing.Point(49, 159);
             this.loginField.Multiline = true;
             this.loginField.Name = "loginField";
             this.loginField.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -139,7 +172,7 @@ namespace МагазинМузыкальныхИнструментов
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegister.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.buttonRegister.Location = new System.Drawing.Point(127, 256);
+            this.buttonRegister.Location = new System.Drawing.Point(126, 307);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(237, 34);
             this.buttonRegister.TabIndex = 3;
@@ -158,26 +191,15 @@ namespace МагазинМузыкальныхИнструментов
             this.label1.TabIndex = 0;
             this.label1.Text = "Оформление заказа";
             // 
-            // userCodeField
-            // 
-            this.userCodeField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userCodeField.ForeColor = System.Drawing.Color.Gray;
-            this.userCodeField.Location = new System.Drawing.Point(49, 205);
-            this.userCodeField.Multiline = true;
-            this.userCodeField.Name = "userCodeField";
-            this.userCodeField.Size = new System.Drawing.Size(395, 30);
-            this.userCodeField.TabIndex = 7;
-            this.userCodeField.Text = "Стоимость";
-            this.userCodeField.UseSystemPasswordChar = true;
-            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 372);
+            this.ClientSize = new System.Drawing.Size(615, 430);
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OrderForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderForm";
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
@@ -190,7 +212,7 @@ namespace МагазинМузыкальныхИнструментов
         #endregion
 
         private System.Windows.Forms.Panel MainPanel;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label ArrowBackLabel;
         private System.Windows.Forms.Label closeButton;
         private System.Windows.Forms.Panel SmallMainPanel;
         private System.Windows.Forms.TextBox userEmailField;
@@ -199,5 +221,6 @@ namespace МагазинМузыкальныхИнструментов
         private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox userCodeField;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

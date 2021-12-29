@@ -33,12 +33,11 @@ namespace МагазинМузыкальныхИнструментов
             this.ArrowBackLabel = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Label();
             this.SmallMainPanel = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.userCodeField = new System.Windows.Forms.TextBox();
-            this.userEmailField = new System.Windows.Forms.TextBox();
-            this.loginField = new System.Windows.Forms.TextBox();
-            this.userNameField = new System.Windows.Forms.TextBox();
-            this.buttonRegister = new System.Windows.Forms.Button();
+            this.instrumentAdres = new System.Windows.Forms.TextBox();
+            this.instrumentType = new System.Windows.Forms.TextBox();
+            this.instrumentQuantity = new System.Windows.Forms.TextBox();
+            this.instrumentName = new System.Windows.Forms.TextBox();
+            this.buttonOrder = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             this.SmallMainPanel.SuspendLayout();
@@ -89,95 +88,91 @@ namespace МагазинМузыкальныхИнструментов
             // SmallMainPanel
             // 
             this.SmallMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
-            this.SmallMainPanel.Controls.Add(this.textBox1);
-            this.SmallMainPanel.Controls.Add(this.userCodeField);
-            this.SmallMainPanel.Controls.Add(this.userEmailField);
-            this.SmallMainPanel.Controls.Add(this.loginField);
-            this.SmallMainPanel.Controls.Add(this.userNameField);
-            this.SmallMainPanel.Controls.Add(this.buttonRegister);
+            this.SmallMainPanel.Controls.Add(this.instrumentAdres);
+            this.SmallMainPanel.Controls.Add(this.instrumentType);
+            this.SmallMainPanel.Controls.Add(this.instrumentQuantity);
+            this.SmallMainPanel.Controls.Add(this.instrumentName);
+            this.SmallMainPanel.Controls.Add(this.buttonOrder);
             this.SmallMainPanel.Controls.Add(this.label1);
             this.SmallMainPanel.Location = new System.Drawing.Point(60, 38);
             this.SmallMainPanel.Name = "SmallMainPanel";
             this.SmallMainPanel.Size = new System.Drawing.Size(487, 360);
             this.SmallMainPanel.TabIndex = 0;
             // 
-            // textBox1
+            // instrumentAdres
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(49, 255);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(395, 30);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "Адресс";
-            this.textBox1.UseSystemPasswordChar = true;
+            this.instrumentAdres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.instrumentAdres.ForeColor = System.Drawing.Color.Gray;
+            this.instrumentAdres.Location = new System.Drawing.Point(49, 211);
+            this.instrumentAdres.Multiline = true;
+            this.instrumentAdres.Name = "instrumentAdres";
+            this.instrumentAdres.Size = new System.Drawing.Size(395, 30);
+            this.instrumentAdres.TabIndex = 8;
+            this.instrumentAdres.Text = "Адресс";
+            this.instrumentAdres.UseSystemPasswordChar = true;
+            this.instrumentAdres.Enter += new System.EventHandler(this.instrumentAdres_Enter);
+            this.instrumentAdres.Leave += new System.EventHandler(this.instrumentAdres_Leave);
             // 
-            // userCodeField
+            // instrumentType
             // 
-            this.userCodeField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userCodeField.ForeColor = System.Drawing.Color.Gray;
-            this.userCodeField.Location = new System.Drawing.Point(49, 205);
-            this.userCodeField.Multiline = true;
-            this.userCodeField.Name = "userCodeField";
-            this.userCodeField.Size = new System.Drawing.Size(395, 30);
-            this.userCodeField.TabIndex = 7;
-            this.userCodeField.Text = "Стоимость";
-            this.userCodeField.UseSystemPasswordChar = true;
+            this.instrumentType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.instrumentType.ForeColor = System.Drawing.Color.Gray;
+            this.instrumentType.Location = new System.Drawing.Point(49, 109);
+            this.instrumentType.Multiline = true;
+            this.instrumentType.Name = "instrumentType";
+            this.instrumentType.Size = new System.Drawing.Size(395, 30);
+            this.instrumentType.TabIndex = 6;
+            this.instrumentType.Text = "Тип инструмента";
+            this.instrumentType.UseSystemPasswordChar = true;
+            this.instrumentType.Enter += new System.EventHandler(this.instrumentType_Enter);
+            this.instrumentType.Leave += new System.EventHandler(this.instrumentType_Leave);
             // 
-            // userEmailField
+            // instrumentQuantity
             // 
-            this.userEmailField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userEmailField.ForeColor = System.Drawing.Color.Gray;
-            this.userEmailField.Location = new System.Drawing.Point(49, 109);
-            this.userEmailField.Multiline = true;
-            this.userEmailField.Name = "userEmailField";
-            this.userEmailField.Size = new System.Drawing.Size(395, 30);
-            this.userEmailField.TabIndex = 6;
-            this.userEmailField.Text = "Тип инструмента";
-            this.userEmailField.UseSystemPasswordChar = true;
+            this.instrumentQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.instrumentQuantity.ForeColor = System.Drawing.Color.Gray;
+            this.instrumentQuantity.Location = new System.Drawing.Point(49, 159);
+            this.instrumentQuantity.Multiline = true;
+            this.instrumentQuantity.Name = "instrumentQuantity";
+            this.instrumentQuantity.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.instrumentQuantity.Size = new System.Drawing.Size(395, 30);
+            this.instrumentQuantity.TabIndex = 2;
+            this.instrumentQuantity.Text = "Количество";
+            this.instrumentQuantity.UseSystemPasswordChar = true;
+            this.instrumentQuantity.Enter += new System.EventHandler(this.instrumentQuantity_Enter);
+            this.instrumentQuantity.Leave += new System.EventHandler(this.instrumentQuantity_Leave);
             // 
-            // loginField
+            // instrumentName
             // 
-            this.loginField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.loginField.ForeColor = System.Drawing.Color.Gray;
-            this.loginField.Location = new System.Drawing.Point(49, 159);
-            this.loginField.Multiline = true;
-            this.loginField.Name = "loginField";
-            this.loginField.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.loginField.Size = new System.Drawing.Size(395, 30);
-            this.loginField.TabIndex = 2;
-            this.loginField.Text = "Количество";
-            this.loginField.UseSystemPasswordChar = true;
+            this.instrumentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.instrumentName.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.instrumentName.Location = new System.Drawing.Point(49, 61);
+            this.instrumentName.Multiline = true;
+            this.instrumentName.Name = "instrumentName";
+            this.instrumentName.Size = new System.Drawing.Size(395, 30);
+            this.instrumentName.TabIndex = 4;
+            this.instrumentName.Text = "Название инструмента";
+            this.instrumentName.UseSystemPasswordChar = true;
+            this.instrumentName.Enter += new System.EventHandler(this.instrumentName_Enter);
+            this.instrumentName.Leave += new System.EventHandler(this.instrumentName_Leave);
             // 
-            // userNameField
+            // buttonOrder
             // 
-            this.userNameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userNameField.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.userNameField.Location = new System.Drawing.Point(49, 61);
-            this.userNameField.Multiline = true;
-            this.userNameField.Name = "userNameField";
-            this.userNameField.Size = new System.Drawing.Size(395, 30);
-            this.userNameField.TabIndex = 4;
-            this.userNameField.Text = "Название инструмента";
-            this.userNameField.UseSystemPasswordChar = true;
-            // 
-            // buttonRegister
-            // 
-            this.buttonRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(202)))), ((int)(((byte)(201)))));
-            this.buttonRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRegister.FlatAppearance.BorderSize = 0;
-            this.buttonRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            this.buttonRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegister.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.buttonRegister.Location = new System.Drawing.Point(126, 307);
-            this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(237, 34);
-            this.buttonRegister.TabIndex = 3;
-            this.buttonRegister.Text = "Заказать";
-            this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(202)))), ((int)(((byte)(201)))));
+            this.buttonOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonOrder.FlatAppearance.BorderSize = 0;
+            this.buttonOrder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.buttonOrder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.buttonOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOrder.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.buttonOrder.Location = new System.Drawing.Point(126, 307);
+            this.buttonOrder.Name = "buttonOrder";
+            this.buttonOrder.Size = new System.Drawing.Size(237, 34);
+            this.buttonOrder.TabIndex = 3;
+            this.buttonOrder.Text = "Оформить заказ";
+            this.buttonOrder.UseVisualStyleBackColor = false;
+            this.buttonOrder.Click += new System.EventHandler(this.buttonOrder_Click);
             // 
             // label1
             // 
@@ -190,6 +185,7 @@ namespace МагазинМузыкальныхИнструментов
             this.label1.Size = new System.Drawing.Size(170, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Оформление заказа";
+            
             // 
             // OrderForm
             // 
@@ -201,6 +197,7 @@ namespace МагазинМузыкальныхИнструментов
             this.Name = "OrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderForm";
+            
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             this.SmallMainPanel.ResumeLayout(false);
@@ -215,12 +212,11 @@ namespace МагазинМузыкальныхИнструментов
         private System.Windows.Forms.Label ArrowBackLabel;
         private System.Windows.Forms.Label closeButton;
         private System.Windows.Forms.Panel SmallMainPanel;
-        private System.Windows.Forms.TextBox userEmailField;
-        private System.Windows.Forms.TextBox loginField;
-        private System.Windows.Forms.TextBox userNameField;
-        private System.Windows.Forms.Button buttonRegister;
+        private System.Windows.Forms.TextBox instrumentType;
+        private System.Windows.Forms.TextBox instrumentQuantity;
+        private System.Windows.Forms.TextBox instrumentName;
+        private System.Windows.Forms.Button buttonOrder;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox userCodeField;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox instrumentAdres;
     }
 }

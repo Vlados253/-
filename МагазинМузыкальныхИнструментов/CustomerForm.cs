@@ -19,6 +19,7 @@ namespace МагазинМузыкальныхИнструментов
 
         MySqlDataAdapter adapterCustomer = new MySqlDataAdapter();
 
+        DataGridViewCellStyle style = new DataGridViewCellStyle();
         public CustomerForm()
         {
             InitializeComponent();

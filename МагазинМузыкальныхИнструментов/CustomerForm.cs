@@ -18,8 +18,6 @@ namespace МагазинМузыкальныхИнструментов
         DataTable tableCustomer = new DataTable();
 
         MySqlDataAdapter adapterCustomer = new MySqlDataAdapter();
-
-        DataGridViewCellStyle style = new DataGridViewCellStyle();
         public CustomerForm()
         {
             InitializeComponent();
@@ -28,7 +26,6 @@ namespace МагазинМузыкальныхИнструментов
         {
             closeButton.ForeColor = Color.Red;
         }
-
         private void closeButton_MouseLeave(object sender, EventArgs e)
         {
             closeButton.ForeColor = Color.White;
@@ -37,26 +34,21 @@ namespace МагазинМузыкальныхИнструментов
         {
             Application.Exit();
         }
-
         private void CustomerForm_Load(object sender, EventArgs e)
         {
-            MySqlCommand commandCustomer = new MySqlCommand("SELECT musical_instruments.name,musical_instruments.type,musical_instruments.cost FROM `musical_instruments`", db.getConnetion());
-
+            MySqlCommand commandCustomer = new MySqlCommand("SELECT musical_instruments.instrument_name,musical_instruments.cost,musical_instruments.type FROM `musical_instruments`", db.getConnetion());
             adapterCustomer.SelectCommand = commandCustomer;
             adapterCustomer.Fill(tableCustomer);
             dataGridView1.DataSource = tableCustomer;
         }
-
         private void updateButton_Click(object sender, EventArgs e)
         {
             tableCustomer.Clear();
             adapterCustomer.Fill(tableCustomer);
             dataGridView1.DataSource = tableCustomer;
         }
-
         private void orderButton_Click(object sender, EventArgs e)
-        {
-            
+        {         
             OrderForm orderform = new OrderForm();
             orderform.Show();
         }

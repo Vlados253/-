@@ -33,7 +33,7 @@ namespace МагазинМузыкальныхИнструментов
             this.ArrowBackLabel = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Label();
             this.SmallMainPanel = new System.Windows.Forms.Panel();
-            this.instrumentAdres = new System.Windows.Forms.TextBox();
+            this.customerAdres = new System.Windows.Forms.TextBox();
             this.instrumentType = new System.Windows.Forms.TextBox();
             this.instrumentQuantity = new System.Windows.Forms.TextBox();
             this.instrumentName = new System.Windows.Forms.TextBox();
@@ -54,6 +54,8 @@ namespace МагазинМузыкальныхИнструментов
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(616, 431);
             this.MainPanel.TabIndex = 3;
+            this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseDown);
+            this.MainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseMove);
             // 
             // ArrowBackLabel
             // 
@@ -88,7 +90,7 @@ namespace МагазинМузыкальныхИнструментов
             // SmallMainPanel
             // 
             this.SmallMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
-            this.SmallMainPanel.Controls.Add(this.instrumentAdres);
+            this.SmallMainPanel.Controls.Add(this.customerAdres);
             this.SmallMainPanel.Controls.Add(this.instrumentType);
             this.SmallMainPanel.Controls.Add(this.instrumentQuantity);
             this.SmallMainPanel.Controls.Add(this.instrumentName);
@@ -99,19 +101,19 @@ namespace МагазинМузыкальныхИнструментов
             this.SmallMainPanel.Size = new System.Drawing.Size(487, 360);
             this.SmallMainPanel.TabIndex = 0;
             // 
-            // instrumentAdres
+            // customerAdres
             // 
-            this.instrumentAdres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.instrumentAdres.ForeColor = System.Drawing.Color.Gray;
-            this.instrumentAdres.Location = new System.Drawing.Point(49, 211);
-            this.instrumentAdres.Multiline = true;
-            this.instrumentAdres.Name = "instrumentAdres";
-            this.instrumentAdres.Size = new System.Drawing.Size(395, 30);
-            this.instrumentAdres.TabIndex = 8;
-            this.instrumentAdres.Text = "Адресс";
-            this.instrumentAdres.UseSystemPasswordChar = true;
-            this.instrumentAdres.Enter += new System.EventHandler(this.instrumentAdres_Enter);
-            this.instrumentAdres.Leave += new System.EventHandler(this.instrumentAdres_Leave);
+            this.customerAdres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.customerAdres.ForeColor = System.Drawing.Color.Gray;
+            this.customerAdres.Location = new System.Drawing.Point(49, 211);
+            this.customerAdres.Multiline = true;
+            this.customerAdres.Name = "customerAdres";
+            this.customerAdres.Size = new System.Drawing.Size(395, 30);
+            this.customerAdres.TabIndex = 8;
+            this.customerAdres.Text = "Адресс";
+            this.customerAdres.UseSystemPasswordChar = true;
+            this.customerAdres.Enter += new System.EventHandler(this.instrumentAdres_Enter);
+            this.customerAdres.Leave += new System.EventHandler(this.instrumentAdres_Leave);
             // 
             // instrumentType
             // 
@@ -185,7 +187,6 @@ namespace МагазинМузыкальныхИнструментов
             this.label1.Size = new System.Drawing.Size(170, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Оформление заказа";
-            
             // 
             // OrderForm
             // 
@@ -197,7 +198,6 @@ namespace МагазинМузыкальныхИнструментов
             this.Name = "OrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderForm";
-            
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             this.SmallMainPanel.ResumeLayout(false);
@@ -217,6 +217,6 @@ namespace МагазинМузыкальныхИнструментов
         private System.Windows.Forms.TextBox instrumentName;
         private System.Windows.Forms.Button buttonOrder;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox instrumentAdres;
+        private System.Windows.Forms.TextBox customerAdres;
     }
 }

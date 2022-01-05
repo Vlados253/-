@@ -25,6 +25,8 @@ namespace МагазинМузыкальныхИнструментов
 
             orderId.Text = "Введите уникальный номер заказа";
             orderId.ForeColor = Color.Gray;
+            quantityBox.Text = "Введите колличество заказанного инструмента";
+            quantityBox.ForeColor = Color.Gray;
         }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -56,6 +58,11 @@ namespace МагазинМузыкальныхИнструментов
             if (orderId.Text == "Введите уникальный номер заказа") 
             {
                 MessageBox.Show("Введите уникальный номер заказа!");
+                return;
+            }
+            if (orderId.Text == "Введите колличество заказанного инструмента")
+            {
+                MessageBox.Show("Введите колличество заказанного инструмента!");
                 return;
             }
             if (checkBox.Checked == true) 
@@ -172,6 +179,24 @@ namespace МагазинМузыкальныхИнструментов
         private void ArrowBackLabel_MouseLeave(object sender, EventArgs e)
         {
             ArrowBackLabel.ForeColor = Color.White;
+        }
+
+        private void quantityBox_Enter(object sender, EventArgs e)
+        {
+            if (quantityBox.Text == "Введите уникальный номер заказа")
+            {
+                quantityBox.Text = "";
+                quantityBox.ForeColor = Color.Black;
+            }
+        }
+
+        private void quantityBox_Leave(object sender, EventArgs e)
+        {
+            if (quantityBox.Text == "")
+            {
+                quantityBox.Text = "Введите уникальный номер заказа";
+                quantityBox.ForeColor = Color.Gray;
+            }
         }
     }
 }

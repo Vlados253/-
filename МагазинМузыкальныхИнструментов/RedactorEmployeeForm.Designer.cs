@@ -119,6 +119,8 @@ namespace МагазинМузыкальныхИнструментов
             this.quantityBox.Size = new System.Drawing.Size(395, 30);
             this.quantityBox.TabIndex = 7;
             this.quantityBox.UseSystemPasswordChar = true;
+            this.quantityBox.Enter += new System.EventHandler(this.quantityBox_Enter);
+            this.quantityBox.Leave += new System.EventHandler(this.quantityBox_Leave);
             // 
             // checkBox
             // 

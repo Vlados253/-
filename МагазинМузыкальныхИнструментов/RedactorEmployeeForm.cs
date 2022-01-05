@@ -26,6 +26,10 @@ namespace МагазинМузыкальныхИнструментов
             orderId.Text = "Введите уникальный номер заказа";
             orderId.ForeColor = Color.Gray;
         }
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime.Now.ToString("yyyy’-‘MM’-‘dd’ ’HH’:’mm’:’ss");
+        }
         private void orderId_Enter(object sender, EventArgs e)
         {
             if (orderId.Text == "Введите уникальный номер заказа")
@@ -56,9 +60,10 @@ namespace МагазинМузыкальныхИнструментов
             }
             if (checkBox.Checked == true) 
             {
-                MySqlCommand commandEmployee = new MySqlCommand("SELECT orders.status FROM `orders` WHERE orders.id = @oI AND orders.status = @iP", db.getConnetion());
+                MySqlCommand commandEmployee = new MySqlCommand("SELECT orders.status, orders.quantity FROM `orders` WHERE orders.id = @oI AND orders.status = @iP AND orders.quantity = @qB", db.getConnetion());
                 commandEmployee.Parameters.Add("@oI", MySqlDbType.Int32).Value = orderid;
                 commandEmployee.Parameters.Add("@iP", MySqlDbType.VarChar).Value = orderstatus;
+                commandEmployee.Parameters.Add("@qB", MySqlDbType.Int32).Value = orderquantity;
 
                 adapterEmployee.SelectCommand = commandEmployee;
                 adapterEmployee.Fill(tableEmployee);
@@ -72,13 +77,13 @@ namespace МагазинМузыкальныхИнструментов
                     adapterEmployee.SelectCommand = commandEmployee2;
                     adapterEmployee.Fill(tableEmployee);
 
-                    MySqlCommand commandEmployee3 = new MySqlCommand("INSERT INTO `sales` (instrument_name, quantity, cost, itogo, date) VALUES ((SELECT instrument_name FROM `orders` WHERE orders.id = @oI),(SELECT quantity FROM `orders` WHERE orders.id = @oI),(SELECT cost FROM `orders` WHERE orders.id = @oI),(SELECT itogo FROM `orders` WHERE orders.id = @oI),(date = @sD))", db.getConnetion());
+                    MySqlCommand commandEmployee3 = new MySqlCommand("INSERT INTO `sales` (instrument_name, quantity, cost, itogo, date) VALUES ((SELECT instrument_name FROM `orders` WHERE orders.id = @oI),(SELECT quantity FROM `orders` WHERE orders.id = @oI),(SELECT cost FROM `orders` WHERE orders.id = @oI),(SELECT itogo FROM `orders` WHERE orders.id = @oI),@sD)", db.getConnetion());
                     commandEmployee3.Parameters.Add("@oI", MySqlDbType.Int32).Value = orderid;
-                    commandEmployee3.Parameters.Add("@sD", MySqlDbType.VarChar).Value = dateBox.Text;
+                    commandEmployee3.Parameters.Add("@sD", MySqlDbType.Datetime).Value = dateTimePicker1.Value;
 
                     adapterEmployee.SelectCommand = commandEmployee3;
                     adapterEmployee.Fill(tableEmployee);
-                    
+
                     MySqlCommand commandEmployee4 = new MySqlCommand("UPDATE musical_instruments SET musical_instruments.quantity = musical_instruments.quantity - @qB WHERE musical_instruments.instrument_name = (SELECT orders.instrument_name FROM `orders` WHERE orders.id = @oI)", db.getConnetion());
                     commandEmployee4.Parameters.Add("@oI", MySqlDbType.Int32).Value = orderid;
                     commandEmployee4.Parameters.Add("@qB", MySqlDbType.Int32).Value = orderquantity;
@@ -142,6 +147,31 @@ namespace МагазинМузыкальныхИнструментов
                 this.Left += e.X - lastPoint.X;
                 this.Top += e.Y - lastPoint.Y;
             }
+        }
+
+        private void closeButton_MouseEnter(object sender, EventArgs e)
+        {
+            closeButton.ForeColor = Color.Red;
+        }
+
+        private void closeButton_MouseLeave(object sender, EventArgs e)
+        {
+            closeButton.ForeColor = Color.White;
+        }
+
+        private void ArrowBackLabel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void ArrowBackLabel_MouseEnter(object sender, EventArgs e)
+        {
+            ArrowBackLabel.ForeColor = Color.Gray;
+        }
+
+        private void ArrowBackLabel_MouseLeave(object sender, EventArgs e)
+        {
+            ArrowBackLabel.ForeColor = Color.White;
         }
     }
 }

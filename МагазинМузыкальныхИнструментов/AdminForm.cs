@@ -119,9 +119,10 @@ namespace МагазинМузыкальныхИнструментов
             insertform.Show();
         }
 
-        private void buttonOtchet_Click(object sender, EventArgs e)
+        private void deleteButton_Click(object sender, EventArgs e)
         {
-
+            DeleteForm deleteform = new DeleteForm();
+            deleteform.Show();
         }
     }
 }

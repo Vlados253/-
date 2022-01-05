@@ -16,10 +16,8 @@ namespace МагазинМузыкальныхИнструментов
         DB db = new DB();
 
         DataTable tableEmployee = new DataTable();
-        DataTable tableEmployee2 = new DataTable();
 
-        MySqlDataAdapter adapterEmployee = new MySqlDataAdapter();
-        MySqlDataAdapter adapterEmployee2 = new MySqlDataAdapter();
+        MySqlDataAdapter adapterEmployee = new MySqlDataAdapter();    
         public InsertForm()
         {
             InitializeComponent();

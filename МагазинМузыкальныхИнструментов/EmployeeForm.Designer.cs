@@ -29,11 +29,12 @@ namespace МагазинМузыкальныхИнструментов
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.buttonSpisok = new System.Windows.Forms.Button();
+            this.buttonKatalog = new System.Windows.Forms.Button();
             this.buttonOrders = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Label();
             this.SmallMainPanel = new System.Windows.Forms.Panel();
@@ -43,10 +44,8 @@ namespace МагазинМузыкальныхИнструментов
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonOtchet = new System.Windows.Forms.Button();
             this.buttonRedactor = new System.Windows.Forms.Button();
             this.buttonSales = new System.Windows.Forms.Button();
-            this.buttonKatalog = new System.Windows.Forms.Button();
             this.buttonReceipts = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SmallMainPanel.SuspendLayout();
@@ -85,6 +84,21 @@ namespace МагазинМузыкальныхИнструментов
             this.buttonSpisok.UseVisualStyleBackColor = false;
             this.buttonSpisok.Click += new System.EventHandler(this.buttonSpisok_Click);
             // 
+            // buttonKatalog
+            // 
+            this.buttonKatalog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
+            this.buttonKatalog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonKatalog.FlatAppearance.BorderSize = 0;
+            this.buttonKatalog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKatalog.ForeColor = System.Drawing.Color.White;
+            this.buttonKatalog.Location = new System.Drawing.Point(220, 38);
+            this.buttonKatalog.Name = "buttonKatalog";
+            this.buttonKatalog.Size = new System.Drawing.Size(180, 23);
+            this.buttonKatalog.TabIndex = 6;
+            this.buttonKatalog.Text = "Каталог";
+            this.buttonKatalog.UseVisualStyleBackColor = false;
+            this.buttonKatalog.Click += new System.EventHandler(this.buttonKatalog_Click);
+            // 
             // buttonOrders
             // 
             this.buttonOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
@@ -120,7 +134,6 @@ namespace МагазинМузыкальныхИнструментов
             this.SmallMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
             this.SmallMainPanel.Controls.Add(this.panel1);
             this.SmallMainPanel.Controls.Add(this.dataGridView1);
-            this.SmallMainPanel.Controls.Add(this.buttonOtchet);
             this.SmallMainPanel.Controls.Add(this.buttonRedactor);
             this.SmallMainPanel.Location = new System.Drawing.Point(34, 66);
             this.SmallMainPanel.Name = "SmallMainPanel";
@@ -158,39 +171,39 @@ namespace МагазинМузыкальныхИнструментов
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 14.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 14.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.Location = new System.Drawing.Point(0, 54);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(920, 388);
             this.dataGridView1.TabIndex = 12;
@@ -219,20 +232,6 @@ namespace МагазинМузыкальныхИнструментов
             this.Column3.ReadOnly = true;
             this.Column3.Visible = false;
             // 
-            // buttonOtchet
-            // 
-            this.buttonOtchet.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonOtchet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonOtchet.FlatAppearance.BorderSize = 0;
-            this.buttonOtchet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonOtchet.ForeColor = System.Drawing.Color.Black;
-            this.buttonOtchet.Location = new System.Drawing.Point(753, 461);
-            this.buttonOtchet.Name = "buttonOtchet";
-            this.buttonOtchet.Size = new System.Drawing.Size(148, 23);
-            this.buttonOtchet.TabIndex = 11;
-            this.buttonOtchet.Text = "Сделать отчет";
-            this.buttonOtchet.UseVisualStyleBackColor = false;
-            // 
             // buttonRedactor
             // 
             this.buttonRedactor.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -240,7 +239,7 @@ namespace МагазинМузыкальныхИнструментов
             this.buttonRedactor.FlatAppearance.BorderSize = 0;
             this.buttonRedactor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRedactor.ForeColor = System.Drawing.Color.Black;
-            this.buttonRedactor.Location = new System.Drawing.Point(572, 461);
+            this.buttonRedactor.Location = new System.Drawing.Point(760, 464);
             this.buttonRedactor.Name = "buttonRedactor";
             this.buttonRedactor.Size = new System.Drawing.Size(148, 23);
             this.buttonRedactor.TabIndex = 10;
@@ -262,21 +261,6 @@ namespace МагазинМузыкальныхИнструментов
             this.buttonSales.Text = "Продажи";
             this.buttonSales.UseVisualStyleBackColor = false;
             this.buttonSales.Click += new System.EventHandler(this.buttonSales_Click);
-            // 
-            // buttonKatalog
-            // 
-            this.buttonKatalog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
-            this.buttonKatalog.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonKatalog.FlatAppearance.BorderSize = 0;
-            this.buttonKatalog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKatalog.ForeColor = System.Drawing.Color.White;
-            this.buttonKatalog.Location = new System.Drawing.Point(220, 38);
-            this.buttonKatalog.Name = "buttonKatalog";
-            this.buttonKatalog.Size = new System.Drawing.Size(180, 23);
-            this.buttonKatalog.TabIndex = 6;
-            this.buttonKatalog.Text = "Каталог";
-            this.buttonKatalog.UseVisualStyleBackColor = false;
-            this.buttonKatalog.Click += new System.EventHandler(this.buttonKatalog_Click);
             // 
             // buttonReceipts
             // 
@@ -325,7 +309,6 @@ namespace МагазинМузыкальныхИнструментов
         private System.Windows.Forms.Button buttonOrders;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonSpisok;
-        private System.Windows.Forms.Button buttonOtchet;
         private System.Windows.Forms.Button buttonRedactor;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

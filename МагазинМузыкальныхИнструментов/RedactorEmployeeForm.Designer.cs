@@ -33,7 +33,7 @@ namespace МагазинМузыкальныхИнструментов
             this.MainPanel = new System.Windows.Forms.Panel();
             this.closeButton = new System.Windows.Forms.Label();
             this.SmallMainPanel = new System.Windows.Forms.Panel();
-            this.dateBox = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.quantityBox = new System.Windows.Forms.TextBox();
             this.checkBox = new System.Windows.Forms.CheckBox();
             this.orderId = new System.Windows.Forms.TextBox();
@@ -54,6 +54,9 @@ namespace МагазинМузыкальныхИнструментов
             this.ArrowBackLabel.Size = new System.Drawing.Size(39, 26);
             this.ArrowBackLabel.TabIndex = 2;
             this.ArrowBackLabel.Text = "<--";
+            this.ArrowBackLabel.Click += new System.EventHandler(this.ArrowBackLabel_Click);
+            this.ArrowBackLabel.MouseEnter += new System.EventHandler(this.ArrowBackLabel_MouseEnter);
+            this.ArrowBackLabel.MouseLeave += new System.EventHandler(this.ArrowBackLabel_MouseLeave);
             // 
             // MainPanel
             // 
@@ -81,11 +84,13 @@ namespace МагазинМузыкальныхИнструментов
             this.closeButton.TabIndex = 1;
             this.closeButton.Text = "x";
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
+            this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
             // 
             // SmallMainPanel
             // 
             this.SmallMainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(94)))), ((int)(((byte)(106)))));
-            this.SmallMainPanel.Controls.Add(this.dateBox);
+            this.SmallMainPanel.Controls.Add(this.dateTimePicker1);
             this.SmallMainPanel.Controls.Add(this.quantityBox);
             this.SmallMainPanel.Controls.Add(this.checkBox);
             this.SmallMainPanel.Controls.Add(this.orderId);
@@ -96,16 +101,13 @@ namespace МагазинМузыкальныхИнструментов
             this.SmallMainPanel.Size = new System.Drawing.Size(487, 360);
             this.SmallMainPanel.TabIndex = 0;
             // 
-            // dateBox
+            // dateTimePicker1
             // 
-            this.dateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateBox.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.dateBox.Location = new System.Drawing.Point(49, 194);
-            this.dateBox.Multiline = true;
-            this.dateBox.Name = "dateBox";
-            this.dateBox.Size = new System.Drawing.Size(395, 30);
-            this.dateBox.TabIndex = 8;
-            this.dateBox.UseSystemPasswordChar = true;
+            this.dateTimePicker1.Location = new System.Drawing.Point(49, 200);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(395, 20);
+            this.dateTimePicker1.TabIndex = 8;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // quantityBox
             // 
@@ -181,7 +183,7 @@ namespace МагазинМузыкальныхИнструментов
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RedactorEmployeeForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RedactorEmployeeForm";
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
@@ -202,6 +204,6 @@ namespace МагазинМузыкальныхИнструментов
         private System.Windows.Forms.Button buttonRedactor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox quantityBox;
-        private System.Windows.Forms.TextBox dateBox;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
